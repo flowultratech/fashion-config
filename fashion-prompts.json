@@ -1,5 +1,5 @@
 {
- "version": "1.0.0",
+ "version": "1.0.1",
  "note": "คำสั่ง AI ของแอปแฟชั่น · fs.* = สูตรขั้นตอนและพรอมต์ · post.* = แคปชั่นและภาพปก · step4.rescue.* = ระบบกู้พรอมต์",
  "blocks": {
   "step4.rescue.videoSys": [
@@ -1128,6 +1128,34 @@
         }
        ]
       },
+      {
+       "op": "block",
+       "sep": "",
+       "parts": [
+        {
+         "when": {
+          "op": "not",
+          "a": {
+           "op": "eq",
+           "a": "{values.fsOccasion}",
+           "b": ""
+          }
+         },
+         "value": {
+          "op": "concat",
+          "parts": [
+           "\n",
+           {
+            "op": "lookup",
+            "table": "fsOccasionPlan",
+            "key": "{values.fsOccasion}",
+            "fallback": ""
+           }
+          ]
+         }
+        }
+       ]
+      },
       "\n\nฉาก: ",
       {
        "op": "block",
@@ -1289,7 +1317,7 @@
           },
           "b": ""
          },
-         "value": "อัตโนมัติ — เลือกฉากที่เข้ากับชุดและแบบคลิป (ทางการ → ดาดฟ้า/สตูดิโอ · ลำลอง → คาเฟ่ · ชุดซัมเมอร์ → ริมทะเล · สตรีท → ถนน · เซลฟี่กระจก → ห้องแต่งตัว/ห้องนอน · มินิมอลคุมโทน → ฉากเรียบโทนเดียวกับชุด · สตรีทสแนป → ถนน/ย่านเมืองเก่า · ลมพัดฟีลหนัง → ทุ่งดอกไม้/ริมทะเล · แกะกล่อง → ห้องนอน/ห้องพักโรงแรม)"
+         "value": "อัตโนมัติ — เลือกฉากที่เข้ากับชุด แบบคลิป และโอกาสที่ใส่ (ถ้าระบุโอกาสไว้ ให้ฉากเข้ากับโอกาสนั้นก่อน · ทางการ → สตูดิโอ/โรงแรม · ลำลอง → คาเฟ่ · ชุดซัมเมอร์ → ริมทะเล · สตรีท → ถนนในเมือง/ตึกแถวเก่า · ส่องกระจก → ห้องแต่งตัว/ห้องนอน · โทนเดียวดูแพง → ฉากเรียบโทนเดียวกับชุด · เดินเล่นสายสตรีท → ถนนในเมือง/ตลาดนัด · ลมพัดสไตล์ซีนหนัง → ริมทะเล/ทุ่งโล่ง · แกะพัสดุ → ห้องนอน/ห้องโรงแรม · ซูมเนื้อผ้า → สตูดิโอพื้นขาว · ตบมือเปลี่ยนชุด → ห้องนอน/ห้องแต่งตัว · 1 ชุด 3 ลุค → ถนนในเมือง/คาเฟ่)"
         },
         {
          "when": {
@@ -1377,6 +1405,34 @@
            "else": "{values.fsScene}"
           },
           "fallback": ""
+         }
+        }
+       ]
+      },
+      {
+       "op": "block",
+       "sep": "",
+       "parts": [
+        {
+         "when": {
+          "op": "not",
+          "a": {
+           "op": "eq",
+           "a": "{values.fsTone}",
+           "b": ""
+          }
+         },
+         "value": {
+          "op": "concat",
+          "parts": [
+           "\n",
+           {
+            "op": "lookup",
+            "table": "fsTonePlan",
+            "key": "{values.fsTone}",
+            "fallback": ""
+           }
+          ]
          }
         }
        ]
@@ -20336,7 +20392,10 @@
     "hanger": "HANGER TO WORN — scene 1: the garment alone on a wooden hanger against a plain wall (no person; she talks off-screen). Then a hard cut to the model wearing the same garment, a new pose every 2-second scene: full-body front, side, a fabric detail, back over the shoulder, a full-body pose at the end. Third-person camera, no selfie, no mirror.",
     "street": "STREET SNAP — ONE continuous hand-held take, like a friend filming her on a phone while walking alongside (third-person, NOT a selfie, NO mirror, no phone in her hand). She strolls casually, glances back over her shoulder, laughs, adjusts her bag or hair, then turns to the camera and talks like chatting with a friend. Gentle natural hand-held follow, full body in most moments.",
     "unbox": "UNBOX TO WORN — scene 1: the model sits or stands at a table, opens a shipping box and lifts the folded garment out toward the camera, excited, talking (the garment in her hands must match the garment photos). Then a hard cut to her wearing it, a new pose every 2-second scene: full-body front, side, a fabric detail, back over the shoulder, a full-body pose at the end. Third-person camera, no selfie, no mirror.",
-    "breeze": "CINEMATIC BREEZE — dreamy film-like fashion ad: soft backlight or golden-hour light, a gentle breeze moves the fabric and her hair in every shot, the camera glides slowly. Third-person camera (NOT a selfie, NO mirror, NO phone). Hard cut every scene (2 s): full-body pose with the hem moving, slow side turn, medium shot of the fabric in the wind, looking back over the shoulder, full-body pose at the end. Her talk stays at normal speed, calm and warm."
+    "breeze": "CINEMATIC BREEZE — dreamy film-like fashion ad: soft backlight or golden-hour light, a gentle breeze moves the fabric and her hair in every shot, the camera glides slowly. Third-person camera (NOT a selfie, NO mirror, NO phone). Hard cut every scene (2 s): full-body pose with the hem moving, slow side turn, medium shot of the fabric in the wind, looking back over the shoulder, full-body pose at the end. Her talk stays at normal speed, calm and warm.",
+    "fabric": "FABRIC CLOSE-UP — scene 1: an extreme macro of the fabric on her body (weave, texture, stitching, a button or lace edge) while her hand brushes or gently stretches it; scene 2: another detail close-up (seam, neckline finish, cuff or hem). Then hard cuts that pull back: a medium shot showing how the fabric drapes and moves, then full-body poses wearing it; the final scene is a full-body pose. Third-person camera, no selfie, no mirror. Her talk explains the fabric (feel, thickness, stretch, breathability) only from the user's data.",
+    "mix3": "ONE PIECE, 3 LOOKS — the shop's garment stays exactly the same in every scene; only simple add-ons change to make 3 looks: look 1 simple and casual, look 2 smart (an open blazer or cardigan, neat shoes), look 3 going-out (a small bag, a bold accessory or a hat). Split the scenes evenly into the 3 looks with a hard cut between looks; each look has at least one full-body pose. Add-ons never cover or change the main garment, are plain and have no logos. Third-person camera, no mirror. Her talk names each look in Thai (e.g. ลุคแรก ลุคทำงาน ลุคออกเที่ยว).",
+    "transition": "OUTFIT TRANSITION — scene 1 (0-2 s) only: the model in plain grey loungewear (a simple oversized T-shirt and shorts — NOT the shop's garment) faces the camera, says the hook and claps her hands at the end of the scene. Scene 2 starts with an instant jump-cut: same spot, same framing, she now wears the shop's garment, hair and look neatly styled. From scene 2 on, a new pose every scene: full-body front, side, a fabric detail, back over the shoulder, a full-body pose at the end. Third-person camera, no mirror. The loungewear appears in scene 1 only; every other scene shows the exact shop garment."
    },
    "fsStyleVideo": {
     "mirror": "ONE CONTINUOUS TAKE — mirror selfie: we see the model's reflection in a full-length mirror; she holds a smartphone in one hand (visible in the reflection, natural slight hand-held shake); head-to-toe stays in frame; small natural moves only; no cuts. The opening frame is supplied — continue from exactly that image.",
@@ -20348,7 +20407,10 @@
     "hanger": "HANGER TO WORN — scene 1 = the garment alone on a hanger, no person (voice only); then a hard cut every 2 s to the model wearing it in new poses; third-person camera. Attached image 1 is the look reference (not a frame of the clip); every frame is ONE full-screen shot.",
     "street": "ONE CONTINUOUS TAKE — candid street snap filmed hand-held by a friend walking alongside (no selfie, mirror or phone in her hand); she strolls, glances back, laughs, then talks to the camera; full body in most moments; no cuts. The opening frame is supplied — continue from exactly that image.",
     "unbox": "UNBOX TO WORN — scene 1 = she opens a shipping box and lifts the garment out toward the camera; then a hard cut every 2 s to her wearing it in new poses; third-person camera. Attached image 1 is the look reference (not a frame of the clip); every frame is ONE full-screen shot.",
-    "breeze": "CINEMATIC BREEZE — hard cut every 2 s; soft backlight, gentle breeze in fabric and hair, slow gliding third-person camera (no selfie, mirror or phone); speech at normal speed. Attached image 1 is the look reference (not a frame of the clip) — match model, outfit, place and light; every frame is ONE full-screen shot."
+    "breeze": "CINEMATIC BREEZE — hard cut every 2 s; soft backlight, gentle breeze in fabric and hair, slow gliding third-person camera (no selfie, mirror or phone); speech at normal speed. Attached image 1 is the look reference (not a frame of the clip) — match model, outfit, place and light; every frame is ONE full-screen shot.",
+    "fabric": "FABRIC CLOSE-UP — the first scenes are extreme macro shots of the fabric, stitching and details on her body (her hand brushing or stretching the fabric); then hard cuts pull back to a medium shot and full-body poses; third-person camera, no mirror. Attached image 1 is the look reference (not a frame of the clip) — match model, outfit, place and light; every frame is ONE full-screen shot.",
+    "mix3": "ONE PIECE, 3 LOOKS — the main garment never changes; hard cuts between 3 looks that only swap simple add-ons (open outer layer, bag, shoes, accessory), each look with a full-body pose; third-person camera, no mirror. Attached image 1 is the look reference (not a frame of the clip) — match model, main garment, place and light; every frame is ONE full-screen shot.",
+    "transition": "OUTFIT TRANSITION — ONLY scene 1 of the whole clip (0-2 s) shows her in plain grey loungewear; she claps her hands and an instant jump-cut reveals her in the outfit from the reference, same spot and framing; later scenes (and every later segment) show only the outfit in new poses with hard cuts; third-person camera, no mirror. Attached image 1 is the look reference for the outfit (not a frame of the clip); every frame is ONE full-screen shot."
    },
    "fsStyleBoard": {
     "mirror": "mirror selfie: the photo IS the reflection in a full-length mirror — the model holds a smartphone in one hand (phone visible in the reflection), full body head-to-toe visible, relaxed natural stance",
@@ -20360,7 +20422,10 @@
     "hanger": "full-body photo of the model wearing the outfit in a relaxed pose, a plain wall behind her",
     "street": "candid full-body street-snap photo taken by a friend: the model mid-stroll glancing back over her shoulder toward the camera",
     "unbox": "full-body photo of the model wearing the outfit in a relaxed pose, natural light",
-    "breeze": "full-body cinematic fashion photo, soft backlight, a gentle breeze lifting the hem and hair, the model in a graceful pose"
+    "breeze": "full-body cinematic fashion photo, soft backlight, a gentle breeze lifting the hem and hair, the model in a graceful pose",
+    "fabric": "full-body photo of the model wearing the outfit, standing relaxed in soft even light that shows the fabric texture and stitching clearly",
+    "mix3": "full-body photo of the model wearing the outfit in its simplest casual styling, relaxed natural pose, the whole garment visible",
+    "transition": "full-body photo of the model wearing the outfit in a confident pose, hair and make-up neatly styled, the whole garment visible"
    },
    "fsSceneEN": {
     "closet": "a bright walk-in dressing room with neat clothes rails and a full-length mirror",
@@ -20387,7 +20452,10 @@
     "korea": "an airy white Korean-style café with soft beige tones, arched windows and a full-length mirror",
     "citynight": "a city street at dusk glowing with warm shop lights and soft neon signs",
     "bookcafe": "a cosy bookstore café with tall wooden shelves and warm light",
-    "autumn": "a tree-lined avenue with golden autumn leaves"
+    "autumn": "a tree-lined avenue with golden autumn leaves",
+    "office": "a bright modern office with a clean desk, glass walls and soft daylight",
+    "market": "a lively Thai open-air market street with colourful stalls and warm string lights, no readable signs",
+    "shophouse": "an old Sino-Portuguese shophouse street with pastel facades, wooden shutters and arched windows"
    },
    "fsFaceEN": {
     "|mirror": "FACE VISIBLE: phone held at chest height; her face stays fully visible in the reflection.",
@@ -20410,7 +20478,13 @@
     "hideK|hanger": "FACE NEVER SHOWN: frame every shot from the shoulders down, head fully out of frame, first to last — no chin or lips, ever.",
     "hideK|street": "FACE NEVER SHOWN: frame every shot from the shoulders down, head fully out of frame, first to last — no chin or lips, ever.",
     "hideK|unbox": "FACE NEVER SHOWN: frame every shot from the shoulders down, head fully out of frame, first to last — no chin or lips, ever.",
-    "hideK|breeze": "FACE NEVER SHOWN: frame every shot from the shoulders down, head fully out of frame, first to last — no chin or lips, ever."
+    "hideK|breeze": "FACE NEVER SHOWN: frame every shot from the shoulders down, head fully out of frame, first to last — no chin or lips, ever.",
+    "hide|fabric": "FACE HIDDEN in EVERY shot incl. the last: crop the head out of frame (neck down) or she faces away — no eyes, nose or lips.",
+    "hideK|fabric": "FACE NEVER SHOWN: frame every shot from the shoulders down, head fully out of frame, first to last — no chin or lips, ever.",
+    "hide|mix3": "FACE HIDDEN in EVERY shot incl. the last: crop the head out of frame (neck down) or she faces away — no eyes, nose or lips.",
+    "hideK|mix3": "FACE NEVER SHOWN: frame every shot from the shoulders down, head fully out of frame, first to last — no chin or lips, ever.",
+    "hide|transition": "FACE HIDDEN in EVERY shot incl. the last: crop the head out of frame (neck down) or she faces away — no eyes, nose or lips.",
+    "hideK|transition": "FACE NEVER SHOWN: frame every shot from the shoulders down, head fully out of frame, first to last — no chin or lips, ever."
    },
    "fsFacePlan": {
     "hide": "ใบหน้า: ไม่เห็นหน้าทุกฉากรวมฉากสุดท้าย (เซลฟี่ = มือถือบังหน้า · แบบอื่น = เฟรมตั้งแต่คอลงไป หรือหันหลัง) — sNen/camN ต้องไม่เห็นหน้า"
@@ -21392,6 +21466,18 @@
     "pd_398": "street",
     "pd_399": "lookbook",
     "pd_400": "unbox"
+   },
+   "fsOccasionPlan": {
+    "work": "โอกาสที่ใส่: ไปทำงาน — ท่าและฉากดูเรียบร้อยน่าเชื่อถือ (เช่น ออฟฟิศ ร้านกาแฟใกล้ที่ทำงาน) พูดถึงการใส่ทำงานทั้งวัน ใส่เข้าประชุม",
+    "travel": "โอกาสที่ใส่: ไปเที่ยว — ท่าสบาย ๆ ถ่ายรูปสวย ฉากเที่ยว (เช่น ริมทะเล ถนนในเมือง ตึกแถวเก่า) พูดถึงการใส่เที่ยว เดินทาง ถ่ายรูปขึ้น",
+    "date": "โอกาสที่ใส่: ไปคาเฟ่หรือเดต — ท่าน่ารักละมุน ฉากคาเฟ่หรือถนนไฟยามค่ำ พูดถึงลุคไปเดต ถ่ายรูปในคาเฟ่",
+    "event": "โอกาสที่ใส่: ไปงานหรือออกงาน — ท่าสง่า ดูโดดเด่น ฉากโรงแรมหรือสตูดิโอ พูดถึงใส่ไปงานแต่ง ปาร์ตี้ งานเลี้ยง",
+    "home": "โอกาสที่ใส่: อยู่บ้านสบาย ๆ — ท่าผ่อนคลาย ฉากห้องนอนหรือห้องนั่งเล่น พูดถึงความสบาย ขยับง่าย ใส่ได้ทั้งวัน"
+   },
+   "fsTonePlan": {
+    "lux": "โทนการขาย: หรูดูแพง — พูดน้อย ประโยคสั้น นุ่มและมั่นใจ เน้นคุณภาพ เนื้อผ้า งานตัด ไม่เร่ง ไม่ตะโกน ไม่ใช้คำว่าถูก",
+    "fun": "โทนการขาย: ขายแบบมีมุก — มีมุกเบา ๆ หรือเปรียบเทียบขำ ๆ 1-2 จุด (ไม่ล้อรูปร่าง ไม่หยาบ) แต่ยังขายของชัด ปิดด้วยชวนกดตะกร้า",
+    "rush": "โทนการขาย: เร่งปิดการขาย — กระชับ เร็ว ชวนสั่งเลยตั้งแต่กลางคลิป ถ้ามีโปรให้พูดโปรตั้งแต่ต้น ห้ามแต่งเรื่องของใกล้หมด สต็อก หรือเวลาจำกัดเองถ้าผู้ใช้ไม่ได้ให้ข้อมูล"
    }
   },
   "fs.brain": {
