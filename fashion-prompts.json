@@ -1,5 +1,5 @@
 {
- "version": "1.2.0",
+ "version": "1.3.0",
  "note": "คำสั่ง AI ของแอปแฟชั่น · fs.* = สูตรขั้นตอนและพรอมต์ · post.* = แคปชั่นและภาพปก · step4.rescue.* = ระบบกู้พรอมต์",
  "blocks": {
   "step4.rescue.videoSys": [
@@ -8735,7 +8735,7 @@
            "b": "hide"
           }
          },
-         "value": ". ONE person, full body head to toe, standing straight facing the camera, relaxed natural smile, arms relaxed"
+         "value": ". ONE person, full body head to toe, standing relaxed with the weight on one leg, body and face toward the camera, relaxed natural smile, arms loose at the sides"
         },
         {
          "when": {
@@ -8748,11 +8748,11 @@
           },
           "b": "hide"
          },
-         "value": ". ONE person, framed from the chin down to the feet — the face is NOT shown — standing straight, arms relaxed"
+         "value": ". ONE person, framed from the chin down to the feet — the face is NOT shown — standing relaxed with the weight on one leg, arms loose at the sides"
         }
        ]
       },
-      ". Wearing a plain fitted white T-shirt and simple light-grey trousers (neutral base outfit — it will be replaced by the shop's garment), plain white sneakers. Ordinary non-famous everyday face with its own small quirks, never a celebrity look-alike. Plain soft light-grey studio background, even soft daylight, ",
+      ". Model-agency digitals style: wearing a plain fitted black crew-neck T-shirt and slim straight dark-blue jeans (neutral base outfit — it will be replaced by the shop's garment), simple black flat shoes. Ordinary non-famous everyday face with its own small quirks, never a celebrity look-alike. Plain clean off-white wall with a soft natural shadow on the floor, soft window daylight, ",
       "authentic Thai online clothing-shop video, real smartphone/camera footage, natural daylight with neutral true-white balance (NOT yellow, NOT warm cast, NOT hazy, NOT washed-out), real skin texture, fresh vivid but natural colours — NOT AI-looking, NOT CGI, NOT plastic skin, NOT glossy magazine retouch",
       ". No text, no logos, no watermark, no other people."
      ]
