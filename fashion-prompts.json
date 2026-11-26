@@ -1,5 +1,5 @@
 {
- "version": "1.3.0",
+ "version": "1.3.1",
  "note": "คำสั่ง AI ของแอปแฟชั่น · fs.* = สูตรขั้นตอนและพรอมต์ · post.* = แคปชั่นและภาพปก · step4.rescue.* = ระบบกู้พรอมต์",
  "blocks": {
   "step4.rescue.videoSys": [
@@ -1317,7 +1317,7 @@
           },
           "b": ""
          },
-         "value": "อัตโนมัติ — เลือกฉากที่เข้ากับชุด แบบคลิป และโอกาสที่ใส่ (ถ้าระบุโอกาสไว้ ให้ฉากเข้ากับโอกาสนั้นก่อน · ทางการ → สตูดิโอ/โรงแรม · ลำลอง → คาเฟ่ · ชุดซัมเมอร์ → ริมทะเล · สตรีท → ถนนในเมือง/ตึกแถวเก่า · ส่องกระจก → ห้องแต่งตัว/ห้องนอน · โทนเดียวดูแพง → ฉากเรียบโทนเดียวกับชุด · เดินเล่นสายสตรีท → ถนนในเมือง/ตลาดนัด · ลมพัดสไตล์ซีนหนัง → ริมทะเล/ทุ่งโล่ง · แกะพัสดุ → ห้องนอน/ห้องโรงแรม · ซูมเนื้อผ้า → สตูดิโอพื้นขาว · ตบมือเปลี่ยนชุด → ห้องนอน/ห้องแต่งตัว · 1 ชุด 3 ลุค → ถนนในเมือง/คาเฟ่)"
+         "value": "อัตโนมัติ — เลือกฉากที่เข้ากับชุดและแบบคลิป (ทางการ → ดาดฟ้า/สตูดิโอ · ลำลอง → คาเฟ่ · ชุดซัมเมอร์ → ริมทะเล · สตรีท → ถนน · เซลฟี่กระจก → ห้องแต่งตัว/ห้องนอน · มินิมอลคุมโทน → ฉากเรียบโทนเดียวกับชุด · สตรีทสแนป → ถนน/ย่านเมืองเก่า · ลมพัดฟีลหนัง → ทุ่งดอกไม้/ริมทะเล · แกะกล่อง → ห้องนอน/ห้องพักโรงแรม)"
         },
         {
          "when": {
@@ -1676,42 +1676,6 @@
           "b": ""
          },
          "value": "ไม่มี — ovN ว่างทุกฉาก"
-        }
-       ]
-      },
-      {
-       "op": "block",
-       "sep": "",
-       "parts": [
-        {
-         "when": {
-          "op": "and",
-          "list": [
-           {
-            "op": "eq",
-            "a": {
-             "op": "cond",
-             "when": {
-              "op": "eq",
-              "a": "{item.own}",
-              "b": "true"
-             },
-             "then": "{item.onscreenText}",
-             "else": "{values.fsOnText}"
-            },
-            "b": "size"
-           },
-           {
-            "op": "not",
-            "a": {
-             "op": "eq",
-             "a": "{item.promotion}",
-             "b": ""
-            }
-           }
-          ]
-         },
-         "value": " · ชุดนี้มีโปรโมชัน: ov2 = โปรโมชันสั้น ≤ 8 คำ จากช่องโปรโมชันเท่านั้น (ห้ามแต่งราคา/ส่วนลด) — ov2 ไม่ต้องว่าง"
         }
        ]
       },
@@ -8735,7 +8699,7 @@
            "b": "hide"
           }
          },
-         "value": ". ONE person, full body head to toe, standing relaxed with the weight on one leg, body and face toward the camera, relaxed natural smile, arms loose at the sides"
+         "value": ". ONE person, full body head to toe, standing straight facing the camera, relaxed natural smile, arms relaxed"
         },
         {
          "when": {
@@ -8748,11 +8712,11 @@
           },
           "b": "hide"
          },
-         "value": ". ONE person, framed from the chin down to the feet — the face is NOT shown — standing relaxed with the weight on one leg, arms loose at the sides"
+         "value": ". ONE person, framed from the chin down to the feet — the face is NOT shown — standing straight, arms relaxed"
         }
        ]
       },
-      ". Model-agency digitals style: wearing a plain fitted black crew-neck T-shirt and slim straight dark-blue jeans (neutral base outfit — it will be replaced by the shop's garment), simple black flat shoes. Ordinary non-famous everyday face with its own small quirks, never a celebrity look-alike. Plain clean off-white wall with a soft natural shadow on the floor, soft window daylight, ",
+      ". Wearing a plain fitted white T-shirt and simple light-grey trousers (neutral base outfit — it will be replaced by the shop's garment), plain white sneakers. Ordinary non-famous everyday face with its own small quirks, never a celebrity look-alike. Plain soft light-grey studio background, even soft daylight, ",
       "authentic Thai online clothing-shop video, real smartphone/camera footage, natural daylight with neutral true-white balance (NOT yellow, NOT warm cast, NOT hazy, NOT washed-out), real skin texture, fresh vivid but natural colours — NOT AI-looking, NOT CGI, NOT plastic skin, NOT glossy magazine retouch",
       ". No text, no logos, no watermark, no other people."
      ]
