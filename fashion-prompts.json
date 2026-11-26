@@ -1,5 +1,5 @@
 {
- "version": "1.3.2",
+ "version": "1.3.3",
  "note": "คำสั่ง AI ของแอปแฟชั่น · fs.* = สูตรขั้นตอนและพรอมต์ · post.* = แคปชั่นและภาพปก · step4.rescue.* = ระบบกู้พรอมต์",
  "blocks": {
   "step4.rescue.videoSys": [
@@ -21665,6 +21665,30 @@
    "mn": {
     "imgNote": "Attached photos in order: this outfit's own model photo (only if the user uploaded one for this outfit), then the garment photos — front, back, detail (only those that exist), then this outfit's own location photo if uploaded, then extra set-piece photos (worn together with the garment) if any, then this outfit's own pet photo if uploaded. The shop's main model, location and pet photos are NOT attached — describe them from the text settings above, never guess from the garment photos. Study the garment's exact colour, fabric, pattern, cut, length and details and describe them precisely in \"outfit\"; describe the model precisely in \"model\"."
    }
-  }
+  },
+  "post.art.1": [
+   "Design a clean, minimal vertical 9:16 cover photo for a Thai online clothing shop's try-on clip. Photorealistic, bright, soft natural daylight, calm and premium, with plenty of empty space and nothing cluttered."
+  ],
+  "post.art.2": [
+   "Reference image 1 is a frame of the clip: keep the SAME model and the SAME outfit exactly (colour, print, fabric, cut and every detail); the other reference images are photos of the same garment. Show the model full body from head to toe, standing naturally with a friendly smile, in the lower two thirds of the frame. Do not draw any outline or border around the person."
+  ],
+  "post.art.3": [
+   "Background: the same place as image 1, tidied up, a little brighter and softer, in colours that suit the outfit."
+  ],
+  "post.art.line1": [
+   "Headline across the top, centred: large, bold, clean rounded Thai sans-serif lettering in one deep colour picked from the outfit, with a very soft shadow so it reads well. Spelled exactly: \"{text}\""
+  ],
+  "post.art.line2": [
+   "Right under the headline, a smaller second line in white lettering on one solid rounded pill in the outfit's accent colour. Spelled exactly: \"{text}\""
+  ],
+  "post.art.sub": [
+   "One small rounded tag near the bottom, in the same accent colour, spelled exactly: \"{text}\""
+  ],
+  "post.art.4": [
+   "Beside the model and away from the face, add two round close-up insets with a thin white ring: one shows the fabric texture or print up close, the other shows one real detail of this outfit (collar, buttons, pocket, waistband or hem). Link each inset to its spot on the outfit with a thin dashed line."
+  ],
+  "post.art.5": [
+   "Rules: Thai text spelled exactly as given, never mirrored or cut off, and no other words anywhere. No stickers, doodles, hearts, stars, sparkles, ribbons, bows, cloud labels, highlight bars or white sticker outlines. Show only what the model wears in image 1, never add bags, jewellery or other props. No prices or claims that are not in the given text. Keep all text off the face. No logo, no watermark."
+  ]
  }
 }
